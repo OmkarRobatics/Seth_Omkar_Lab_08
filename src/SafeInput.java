@@ -19,7 +19,11 @@ public class SafeInput {
         } while (retString.length() == 0); // prompts again if input has no characters
         return retString;
     }
-
+    /**
+     * @param pipe   a Scanner opened to read from System.in
+     * @param prompt for the user
+     * @return a integer response
+     */
     public static int getInt(Scanner pipe, String prompt) {
         // var declarations
         int result = 0;
@@ -40,7 +44,11 @@ public class SafeInput {
         } while (!done);
         return result;
     }
-
+    /**
+     * @param pipe   a Scanner opened to read from System.in
+     * @param prompt for the user
+     * @return a Double response
+     */
     public static double getDouble(Scanner pipe, String prompt) {
         //var declarations
         double result = 0;
@@ -61,7 +69,13 @@ public class SafeInput {
         } while (!done);
         return result;
     }
-
+    /**
+     * @param pipe   a Scanner opened to read from System.in
+     * @param prompt for the user
+     * @param hi high value
+     * @param lo Low value
+     * @return a integer response which is in range
+     */
     public static int getRangedInt(Scanner pipe, String prompt, int lo, int hi)
     {
         //var declarations
@@ -90,6 +104,13 @@ public class SafeInput {
         return result;
     }
 
+    /**
+     * @param pipe   a Scanner opened to read from System.in
+     * @param prompt for the user
+     * @param hi high value
+     * @param lo Low value
+     * @return a double response which is in range
+     */
     public static double getRangedDouble(Scanner pipe, String prompt, double lo, double hi) {
         // var declarations
         double result = 0;
@@ -117,6 +138,11 @@ public class SafeInput {
         return result;
     }
 
+    /**
+     * @param pipe   a Scanner opened to read from System.in
+     * @param prompt for the user
+     * @return true or false
+     */
     public static boolean getYNConfirm(Scanner pipe, String prompt) {
         // var declarations
         String playAgain = "";
@@ -143,6 +169,12 @@ public class SafeInput {
         return done;
     }
 
+    /**
+     * @param pipe   a Scanner opened to read from System.in
+     * @param prompt for the user
+     * @param regEx a pattern
+     * @return a string response which follows pattern
+     */
     public static String getRegexString(Scanner pipe, String prompt, String regEx) {
         // var declarations
         String value = "";
@@ -162,6 +194,9 @@ public class SafeInput {
         return value;
     }
 
+    /**
+     * @param message a message to print
+     */
     public static void PrettyHeader(String message) {
 
             for (int row = 0; row <= 60; row++) // prints 60 *
