@@ -147,6 +147,7 @@ public class SafeInput {
         // var declarations
         String value = "";
         boolean gotAValue = false;
+
         do {
             System.out.print(prompt + ": "); // displays prompt
             value = pipe.nextLine(); // inputs response
@@ -159,6 +160,43 @@ public class SafeInput {
         } while (!gotAValue);
 
         return value;
+    }
+
+    public static void PrettyHeader(String message) {
+
+            for (int row = 0; row <= 60; row++) // prints 60 *
+            {
+                System.out.print("*");
+            }
+        System.out.println("");
+        final int CHAR_COUNT = 60;  //going to assume max characters allowed is 60 on a line
+
+   int totalSpaces = CHAR_COUNT - 6 - message.length();  //how much space I have left after message
+        int leftSpaces, rightSpaces;
+        if(totalSpaces % 2 == 0)  // testing for even spaces using modulo, this makes it exactly centered!
+        {
+            leftSpaces = rightSpaces = totalSpaces / 2;  //this division by two gives me side spaces
+        }
+        else // odd, this is a problem and my message won't be exactly centered, but oh well
+        {
+            rightSpaces = totalSpaces / 2;  //division by two for space on either side of message
+            leftSpaces = rightSpaces + 1;  //this could be switched, I just chose left to have one more space
+        }
+        System.out.print("***"); // prints *** on left side
+        // print left spaces, we figured this out before
+        for(int ch = 0; ch < leftSpaces; ch++)
+            System.out.print(" ");
+        // print msg that was fed to the method as a parameter
+        System.out.print(message); // prints message
+        // print right spaces,
+        for(int ch = 0; ch < rightSpaces; ch++)
+            System.out.print(" ");
+        System.out.print("***"); // prints *** on right side
+        System.out.println("");
+        for (int row = 0; row <= 60; row++) // prints 60 * on bottom
+        {
+            System.out.print("*");
+        }
     }
 }
 
